@@ -43,9 +43,8 @@ Installation
 
 Clone the repo
 
-git clone https://github.com/ronitraii/Realify.git
+git clone https://github.com/Hassan-Raza0/AI-News-Summarizer.git
 cd Realify
-
 
 Create virtual environment
 
@@ -59,12 +58,8 @@ pip install -r requirements.txt
 
 
 Run the backend
-
 python app.py
-
-
 Open in browser
-
 http://localhost:5000
 
 🎮 Usage

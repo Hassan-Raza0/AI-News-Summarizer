@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realify - AI-Powered News Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🔍 Realify</h1>
+            <p>AI-Powered News Analysis & Verification Platform</p>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search news... e.g. 'Imran Khan', 'Weather', 'Shehbaz Sharif'"
+                >
+                <button id="searchBtn" class="search-btn">🔍 Search</button>
+
+                <!-- Scrape Source Selector -->
+                <select id="scrapeSelector" class="scrape-dropdown">
+                    <option value="geo">🟦 Geo News</option>
+                    <option value="bbc">🟥 BBC News</option>
+                    <option value="ary">🟨 ARY News</option>
+                    <option value="samaa">🟪 Samaa News</option>
+                    <option value="dawn">⬛ Dawn News</option>
+                    <option value="all">🌐 All Sources</option>
+                </select>
+
+                <button id="scrapeBtn" class="scrape-btn">📰 Scrape</button>
+            </div>
+
+            <!-- REAL CLICKABLE SOURCE BUTTONS -->
+            <div class="source-selector">
+                <button class="source-btn" data-source="geo">🟦 Geo</button>
+                <button class="source-btn" data-source="bbc">🟥 BBC</button>
+                <button class="source-btn" data-source="ary">🟨 ARY</button>
+                <button class="source-btn" data-source="samaa">🟪 Samaa</button>
+                <button class="source-btn" data-source="dawn">⬛ Dawn</button>
+                <button class="source-btn" data-source="all">🌐 All</button>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading news articles...</p>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="totalNewsCount">0</h3>
+                <p>Total Articles</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="sourcesCount">0</h3>
+                <p>News Sources</p>
+            </div>
+            <div class="stat-card">
+                <h3>AI</h3>
+                <p>Smart Summarization</p>
+            </div>
+        </div>
+
+        <!-- News Grid -->
+        <div id="newsGrid" class="news-grid"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <h2>📰 No News Found</h2>
+            <p>Click <strong>Scrape</strong> to fetch news or <strong>Search</strong> topics</p>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
